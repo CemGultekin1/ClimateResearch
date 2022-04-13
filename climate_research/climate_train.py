@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[4]:
 
 
 import xarray as xr
@@ -20,6 +20,8 @@ from scipy.interpolate import RectBivariateSpline
 import scipy
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from itertools import product
+from datetime import date
+
 '''
 
 os.system("jupyter nbconvert --to script 'climate_data.ipynb'")
@@ -1143,7 +1145,7 @@ def binned_r2_analysis(args,save=True):
     
 
 
-# In[2]:
+# In[5]:
 
 
 def analysis(args):
@@ -1246,7 +1248,7 @@ def analysis(args):
     print('analysis is done',flush=True)
 
 
-# In[1]:
+# In[6]:
 
 
 def shift_geo_analysis(args):    
@@ -1442,13 +1444,13 @@ def quadratic_fit(args):
             break
 
 
-# In[43]:
+# In[7]:
 
 
 '''args=options(string_input=    "--b 2 -e 4 --nworkers 10 --subtime 0.1 --lr 0.01 --model_id 0 --model_bank_id 4".split())'''
 
 
-# In[2]:
+# In[8]:
 
 
 def error_analysis(args):
@@ -1539,7 +1541,7 @@ def error_analysis(args):
         
 
 
-# In[1]:
+# In[9]:
 
 
 def quadratic_model_matrix(args):
@@ -1620,10 +1622,12 @@ def give_dev_wrt_input(net,m,dim=0,index=0,class_index=-1,constant=False):
     return g
 
 
-# In[45]:
+# In[10]:
 
 
 def main():
+    today = date.today()
+    print("Today's date:", today,flush=True)
     args=options()
     print(args)
     if args.action=="train":
@@ -1654,6 +1658,30 @@ def main():
         global_averages()
 if __name__=='__main__':
     main()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
