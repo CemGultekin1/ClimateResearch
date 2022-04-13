@@ -286,23 +286,6 @@ def qcnn_architecture(sigma):
 # In[1]:
 
 
-'''
-MODEL COMPARE: (2x2 = 4)  [0-3]
-    LCNN/QCNN
-    u+v+T -> Su+Sv+ST
-    Surf/Deep
-    (testing 1pct CO2)
-
-BASE TESTS: do each with
-    u+v+T -> Su+Sv+ST 
-    LCNN
-    Surf/Deep
-    (testing 1pct CO2)
-filtersize (21) 15 9 7 5 3 1          (2x6)   = 10 [1000-1011]
-coarse-grain (4) 8 12 16              (2x3)   = 6  [2000-2005]
-geophys (4dom) + glbl + glbl lat + glbl long   (2x3)x2 = 12 [3000-3011]
-    (also with UNET)
-'''
 def golden_model_bank(args,descriptive=False,configure=False,verbose=True,only_description=False):
     model_id=int(args.model_id)
     model_bank_id=args.model_bank_id
@@ -530,20 +513,6 @@ def golden_model_bank(args,descriptive=False,configure=False,verbose=True,only_d
         args.batch=4
         filt_mode=tt+1
     elif test_type==8:
-        # FULL TYPE TRAINING
-        
-        # DATASET (2)
-        # SURF/DEEP 
-
-        # FILTERSIZE (9)
-        # 21 15 9 7 5 4 3 2 1
-        
-        # SIGMAVALS (4)
-        # 4 8 12 16 
-        
-        # RESIDUE TARGET(2)
-        # YES - NO
-        
         filter_sizes=[21,15,9,7,5,4,3,2,1]
         
         C=[2,9,4,2]
